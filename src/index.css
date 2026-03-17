@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --font-pixel: "Press Start 2P", cursive;
+}
+
+body {
+  background-color: #09090b;
+  color: white;
+  user-select: none;
+}
+
+.pixel-corners {
+  clip-path: polygon(
+    0 4px, 4px 4px, 4px 0, 
+    calc(100% - 4px) 0, calc(100% - 4px) 4px, 100% 4px, 
+    100% calc(100% - 4px), calc(100% - 4px) calc(100% - 4px), calc(100% - 4px) 100%, 
+    4px 100%, 4px calc(100% - 4px), 0 calc(100% - 4px)
+  );
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
